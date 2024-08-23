@@ -1,6 +1,6 @@
 <template lang="">
   <div>
-    <div class="flex">
+    <div class="flex w-screen">
       <div class="h-screen w-full flex md:hidden">
         <div class="flex flex-col w-full">
           <div class="flex p-3 gap-x-3 justify-between">
@@ -23,11 +23,14 @@
             />
           </div>
           <SideBarMenu v-if="open" />
+          <div v-else class="w-full h-screen p-4">
+            <p>Hello World</p>
+          </div>
         </div>
       </div>
-      <div class="h-screen w-[250px] hidden md:flex border-r">
+      <div class="hidden md:flex w-full">
         <SideBar />
-        <div class="w-full h-screen p-4" v-if="!open">
+        <div class="w-full h-screen p-4">
           <p>Hello World</p>
         </div>
       </div>
