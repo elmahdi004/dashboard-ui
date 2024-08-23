@@ -1,18 +1,43 @@
 <template lang="">
   <div>
-    <div class="flex items-start">
-        <div class="h-screen w-1/5 flex md:hidden">
-            <SideBar/>
+    <div class="flex">
+      <div class="h-screen w-full flex md:hidden">
+        <div class="flex flex-col w-full">
+          <div class="flex p-3 gap-x-3 justify-between">
+            <SideBarLogo />
+            <Icon
+              class="cursor-pointer"
+              @click="toggoleOpen(true)"
+              v-if="!open"
+              name="quill:hamburger"
+              size="30"
+              color="black"
+            />
+            <Icon
+              class="cursor-pointer"
+              @click="toggoleOpen(false)"
+              v-else
+              name="material-symbols:close"
+              size="30"
+              color="black"
+            />
+          </div>
+          <SideBarMenu v-if="open" />
         </div>
-        <div class="h-screen w-1/5 hidden md:flex">
-            <SideBar/>
+      </div>
+      <div class="h-screen w-[250px] hidden md:flex border-r">
+        <SideBar />
+        <div class="w-full h-screen p-4" v-if="!open">
+          <p>Hello World</p>
         </div>
+      </div>
     </div>
-    <slot />
-    <footer>this is footer</footer>
   </div>
 </template>
-<script>
-export default {};
+<script setup>
+const open = ref(true);
+const toggoleOpen = (value) => {
+  open.value = value;
+};
 </script>
 <style lang=""></style>
