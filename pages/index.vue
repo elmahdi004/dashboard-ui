@@ -1,13 +1,20 @@
 <template lang="">
-<div class="bg-red-400">
-    Hello World
-</div>
+    <div>
+        <header>
+            this is the header
+        </header>
+        <main>
+            <section>
+                this is an section
+            </section>
+        </main>
+        <footer>
+            this is the footer
+        </footer>
+    </div>
 </template>
-<script>
-export default {
-    
-}
+<script setup>
 </script>
-<style>
+<style lang="">
     
 </style>

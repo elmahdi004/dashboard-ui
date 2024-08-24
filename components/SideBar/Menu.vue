@@ -1,6 +1,7 @@
 <template lang="">
   <div class="mt-2 ps-3 flex flex-col">
-    <div
+    <NuxtLink
+      :to="item.path"
       class="my-2 text-lg py-1 ps-2 cursor-pointer rounded-lg hover:bg-neutral-100 duration-100"
       v-for="(item, index) in items"
       :key="index"
@@ -9,14 +10,14 @@
         <Icon :name="item.icon" size="20" style="color: black" />
         <p>{{ item.title }}</p>
       </div>
-    </div>
+    </NuxtLink>
   </div>
 </template>
 <script setup>
 const items = ref([
   {
     title: "Overview",
-    path: "/overview",
+    path: "/",
     icon: "grommet-icons:overview",
   },
   {
@@ -47,4 +48,8 @@ const items = ref([
   },
 ]);
 </script>
-<style lang=""></style>
+<style>
+.router-link-active{
+  background-color: rgb(245 245 245);
+}
+</style>

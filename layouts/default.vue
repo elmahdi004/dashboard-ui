@@ -24,14 +24,14 @@
           </div>
           <SideBarMenu v-if="open" />
           <div v-else class="w-full h-screen p-4">
-            <p>Hello World</p>
+            <slot/>
           </div>
         </div>
       </div>
       <div class="hidden md:flex w-full">
         <SideBar />
         <div class="w-full h-screen p-4">
-          <p>Hello World</p>
+          <slot/>
         </div>
       </div>
     </div>
