@@ -70,9 +70,18 @@
  
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border m-0 p-0 box-border;
   }
   body {
     @apply bg-background text-foreground;
+  }
+  h1{
+    @apply font-[700] text-[36px]
+  }
+  p{
+    @apply text-neutral-400 text-sm m-0
+  }
+  main{
+    @apply my-4
   }
 }
