@@ -24,10 +24,8 @@
             <chart :data="tab.data" :lineData="tab.lineData" />
           </TabsContent>
         </Tabs>
-        <div class="flex gap-x-[10px]">
-          <div class="h-[100px] flex-1 bg-neutral-300"></div>
-          <div class="h-[100px] flex-1 bg-neutral-300"></div>
-          <div class="h-[100px] flex-1 bg-neutral-300"></div>
+        <div class=" grid grid-cols-3 gap-x-5">
+                <Card v-for="(card, index) in cards" :key="index"/>
         </div>
       </section>
     </main>
@@ -108,6 +106,29 @@ let currentCategorie = ref([
   "Oct",
   "Nov",
   "Dec",
+]);
+const cards = ref([
+    {
+        title : 'Sales',
+        progression : 20,
+        amount : 230,
+        description : 'Sales of March 2024',
+        icon : ''
+    },
+    {
+        title : 'Refunds',
+        progression : 230,
+        amount : 230,
+        description : 'Refunds of March 2024',
+        icon : ''
+    },
+    {
+        title : 'Payouts',
+        progression : -20,
+        amount : 230,
+        description : 'Payouts of March 2024',
+        icon : ''
+    },
 ]);
 </script>
 <style lang=""></style>
