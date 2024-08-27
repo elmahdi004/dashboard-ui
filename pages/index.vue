@@ -9,23 +9,12 @@
     </header>
     <main>
       <section class="flex flex-col gap-y-4">
-        <!-- <div class="flex gap-x-[10px]">
-                    <div class="w-[100px] h-6 bg-neutral-300">
-                    </div>
-                    <div class="w-[100px] h-6 bg-neutral-300">
-                    </div>
-                    <div class="w-[100px] h-6 bg-neutral-300">
-                    </div>
-                </div>
-                <div class="w-full h-[250px] bg-neutral-300">
-                </div> -->
         <Tabs default-value="account" class="">
           <TabsList>
             <TabsTrigger v-for="(tab, index) in tabs" :key="index" :value="tab.trigger"> {{tab.trigger}} </TabsTrigger>
           </TabsList>
           <TabsContent :value="tab.trigger" v-for="(tab,ind) in tabs">
-            <highchart :options="options" />
-            {{tab.content}}
+            <chart :data="tab.data"/>
           </TabsContent>
         </Tabs>
         <div class="flex gap-x-[10px]">
@@ -43,80 +32,32 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 const tabs = [
     {
         trigger : 'Today',
-        content : 'Today'
+        content : 'Today',
+        data : [5.2, 5.7, 8.7, 13.9, 0.2, 21.4, 2.0, 22.8, 17.5, 12.1, 7.6]
+
     },
     {
         trigger : 'This Week',
-        content : 'This Week'
+        content : 'This Week',
+        data : [5.2, 5.7, 8.7, 1321.9, 0.2, 21.4, 25.01, 22.8, 17.5, 12.1, 7.6]
+
     },
     {
         trigger : 'This Month',
-        content : 'This Month'
+        content : 'This Month',
+        data : [2.2, 5.7, 81.7, 1123.9, 0.2, 35.4, 25.0, 11.8, 17.5, 12.1, 7.6]
+
     },
     {
         trigger : 'This Year',
-        content : 'This Year'
+        content : 'This Year',
+        data : [5.2, 5.7, 8.7, 13.9, 0.2, 21.4, 43.0, 12.8, 17.5, 12.1, 7.6]
+
     },
 ];
 let currentCategorie = ref([
             'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
             'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
         ]);
-let categories = ref([]);
-const options = computed(()=>{
-return {
-    chart: {
-        type: 'spline'
-    },
-    title: {
-        text: ''
-    },
-    xAxis: {
-        categories:currentCategorie ,
-        accessibility: {
-            description: 'Months of the year'
-        },
-        gridLineColor : 'transparent',
-    },
-    yAxis: {
-        title: {
-            text: 'Temperature'
-        },
-        labels: {
-            format: '{value}°'
-        },
-        gridLineColor : 'transparent',
-
-    },
-    tooltip: {
-        crosshairs: true,
-        shared: true
-    },
-    plotOptions: {
-        // line :{
-        //     marker : {
-        //         enabled : false,
-        //     }
-        // },
-        spline: {
-            marker: {
-                enabled : false,
-                radius: 4,
-                lineColor: '#666666',
-                lineWidth: 1
-            }
-        }
-    },
-    series: [{
-        name: 'line',
-        marker: {
-            symbol: 'square'
-        },
-        data: [5.2, 5.7, 8.7, 13.9, 0.2, 21.4, 25.0, 22.8, 17.5, 12.1, 7.6]
-
-    }]
-};
-
-});
 </script>
 <style lang=""></style>
