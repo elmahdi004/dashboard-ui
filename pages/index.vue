@@ -93,8 +93,14 @@ return {
         shared: true
     },
     plotOptions: {
+        // line :{
+        //     marker : {
+        //         enabled : false,
+        //     }
+        // },
         spline: {
             marker: {
+                enabled : false,
                 radius: 4,
                 lineColor: '#666666',
                 lineWidth: 1
@@ -102,11 +108,11 @@ return {
         }
     },
     series: [{
-        name: 'Tokyo',
+        name: 'line',
         marker: {
             symbol: 'square'
         },
-        data: [5.2, 5.7, 8.7, 13.9, 18.2, 21.4, 25.0, {
+        data: [5.2, 5.7, 8.7, 13.9, 0.2, 21.4, 25.0, {
             y: 26.4,
             marker: {
                 symbol: 'url(https://www.highcharts.com/samples/graphics/sun.png)'
@@ -117,21 +123,6 @@ return {
             }
         }, 22.8, 17.5, 12.1, 7.6]
 
-    }, {
-        name: 'Bergen',
-        marker: {
-            symbol: 'diamond'
-        },
-        data: [{
-            y: 1.5,
-            marker: {
-                symbol: 'url(https://www.highcharts.com/samples/graphics/snow.png)'
-            },
-            accessibility: {
-                description: 'Snowy symbol, this is the coldest point in the ' +
-                    'chart.'
-            }
-        }, 1.6, 3.3, 5.9, 10.5, 13.5, 14.5, 14.4, 11.5, 8.7, 4.7, 2.6]
     }]
 };
 
