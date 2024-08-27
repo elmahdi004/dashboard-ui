@@ -5,7 +5,10 @@
 <script setup>
 const props = defineProps({
     data : {
-        type : Object
+        type : Array
+    },
+    lineData : {
+        type : Array,
     }
 });
 const options = computed(()=>{
@@ -17,7 +20,7 @@ return {
         text: ''
     },
     xAxis: {
-        categories:'' ,
+        categories:props.lineData ,
         accessibility: {
             description: 'Months of the year'
         },
