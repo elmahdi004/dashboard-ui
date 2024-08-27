@@ -25,7 +25,7 @@
           </TabsContent>
         </Tabs>
         <div class=" grid grid-cols-3 gap-x-5">
-                <Card v-for="(card, index) in cards" :key="index"/>
+                <Card v-for="(card, index) in cards" :key="index" :data="card"/>
         </div>
       </section>
     </main>
@@ -113,21 +113,21 @@ const cards = ref([
         progression : 20,
         amount : 230,
         description : 'Sales of March 2024',
-        icon : ''
+        icon : 'mdi:sale-outline'
     },
     {
         title : 'Refunds',
         progression : 230,
         amount : 230,
         description : 'Refunds of March 2024',
-        icon : ''
+        icon : 'gridicons:refund'
     },
     {
         title : 'Payouts',
         progression : -20,
         amount : 230,
         description : 'Payouts of March 2024',
-        icon : ''
+        icon : 'material-symbols:money-outline'
     },
 ]);
 </script>
