@@ -10,7 +10,10 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from '@/components/ui/alert-dialog';
+import { Input } from '@/components/ui/input';
+
 const loading = ref(false);
+
 const addNewProduct = async ()=>{
     try {
         loading.value = true;
@@ -32,6 +35,7 @@ const addNewProduct = async ()=>{
       <AlertDialogHeader>
         <AlertDialogTitle>Create new product</AlertDialogTitle>
         <AlertDialogDescription>
+            <Input placeholder="Add the product name"/>
         </AlertDialogDescription>
       </AlertDialogHeader>
       <AlertDialogFooter>

@@ -29,8 +29,10 @@
         </div>
       </div>
       <div class="hidden md:flex w-full">
-        <SideBar />
-        <div class="w-full h-screen p-8">
+        <div>
+          <SideBar />
+        </div>
+        <div class="w-full h-screen p-8 overflow-y-auto">
           <slot/>
         </div>
       </div>
