@@ -7,7 +7,7 @@
         </div>
         <SideBarMenu/>
         </div>
-        <p>El Mahdi Avatar</p>
+        <User/>
 </div>
 </template>
 <script>
