@@ -5,7 +5,7 @@
         <p>Hi , welcome back el mahdi !</p>
         <h1>Dashboard</h1>
       </div>
-      <!-- <div class="w-[150px] h-[30px] bg-neutral-300"></div> -->
+      <ProductNew/>
     </header>
     <main>
       <section class="flex flex-col gap-y-4">
