@@ -9,23 +9,37 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from '@/components/ui/alert-dialog'
+} from '@/components/ui/alert-dialog';
+const loading = ref(false);
+const addNewProduct = async ()=>{
+    try {
+        loading.value = true;
+        await setTimeout(()=>{},4000);
+    } catch (error) {
+        
+    }finally{
+        loading.value = false;
+    }
+}
 </script>
 
 <template>
   <AlertDialog>
-    <AlertDialogTrigger>Open</AlertDialogTrigger>
+    <AlertDialogTrigger>
+        <Button>add new product</Button>
+    </AlertDialogTrigger>
     <AlertDialogContent>
       <AlertDialogHeader>
-        <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+        <AlertDialogTitle>Create new product</AlertDialogTitle>
         <AlertDialogDescription>
-          This action cannot be undone. This will permanently delete your account
-          and remove your data from our servers.
         </AlertDialogDescription>
       </AlertDialogHeader>
       <AlertDialogFooter>
         <AlertDialogCancel>Cancel</AlertDialogCancel>
-        <AlertDialogAction>Continue</AlertDialogAction>
+        <AlertDialogAction @click="addNewProduct()">
+            <span v-if="!loading">Create</span>
+            <Spinner v-else/>
+        </AlertDialogAction>
       </AlertDialogFooter>
     </AlertDialogContent>
   </AlertDialog>

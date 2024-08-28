@@ -1,7 +1,7 @@
 <template lang="">
   <div>
     <div class="flex w-screen">
-      <div class="h-screen w-full flex md:hidden">
+      <div class="h-screen  w-full flex md:hidden">
         <div class="flex flex-col w-full">
           <div class="flex p-3 gap-x-3 justify-between">
             <SideBarLogo />
